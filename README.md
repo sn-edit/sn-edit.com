@@ -1,4 +1,4 @@
-## Servicenow Script Editor Engine
+## Servicenow Script Editor Engine (sn-edit.com)
 
 Did you ever wanted to edit the scripts, ui pages, html etc. locally in your favorite IDE, like Webstorm, Visual Studio Code or others? 
 
