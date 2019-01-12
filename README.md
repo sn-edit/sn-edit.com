@@ -148,6 +148,7 @@ The `tables` property is an array of objects here. Every object, contains two pr
 If you filled out the config file as described above, you are ready to launch the app. For the following examples, we will assume that the binary is called `sn-edit`:
 
 - Run help
+
 To output the help text for the program, run the --help command.
 ```bash
 sn-edit --help
