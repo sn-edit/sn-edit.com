@@ -8,6 +8,10 @@ The app works without you being interacting with it. You need to run it, edit yo
 
 The code is for now not Open Source but this might change in the future. The app runs with zero dependency. All you need to do is download the latest release, setup the config file according to your custom instance and run the app.
 
+# How does this work anyway?
+
+The flow is right now very simplistic. The app syncs the business rules and script includes froom the instance to two folders. All of the files are named based on this pattern `SysName_SysId.js`. It is important to keep the original name. After downloading all the scripts, we set a watcher on these two folders to listen for fs (filesystem) events and if something is saved or written to, then we upload these to the instance. Right now the app does not chevck for conflicts or newer versions on the instance, it just simply uploads the changes regardless of the newer versions, but here is where I need yuo, the potential user, so we can think of a simple and straightforward way on how to do these collision checks and improve the experience. If you delete on or more scripts from your disk, those will be reacquired on the next run.
+
 # Downloads
 Here you will always find a link to the latest version of the app which you can download and run. All previous releases can be found on the [releases](https://github.com/0x111/sn-edit.com/releases) page.
 
@@ -33,7 +37,7 @@ The config file is quite extensive, very broad and at first it may sound complic
     "password": "password",
     "user": "user",
     "xor_key": "randomxorkey",
-    "xored": false
+    "masked": false
   },
   "script_path": "/Users/username/path/to/scripts/folder/",
   "servicenow_instance_url": "https://devxxxx.service-now.com/",
@@ -92,10 +96,10 @@ Since there were requests at my previous work for the Jetbrains IDE, to mask the
     "password": "password",
     "user": "user",
     "xor_key": "randomxorkey",
-    "xored": false
+    "masked": false
   }
 ```
-  At the first run, fill out your username and password as usual, set the xored value to false, set a random `xor_key` per your liking, this will be only stored in this config file and nowhere else. After the first run, the app will mask your password and will update the value in the config file. So after you run the app and then look at your config file you will see some kind of gibberish text instead of your password. This way we will not store the plaintext value longer than the first run. It is important to not change the xor_key afterwards, because then the app won't be able to decrypt it and the rest calls will fail. If you would like to update the password or change the key, you can do that by changing the password value to your new password, change the `xor_key` if needed and then set the `xored` value to false. This way the app will know to mask the password again after the next run.
+  At the first run, fill out your username and password as usual, set the `masked` value to false, set a random `xor_key` per your liking, this will be only stored in this config file and nowhere else. After the first run, the app will mask your password and will update the value in the config file. So after you run the app and then look at your config file you will see some kind of gibberish text instead of your password. This way we will not store the plaintext value longer than the first run. It is important to not change the xor_key afterwards, because then the app won't be able to decrypt it and the rest calls will fail. If you would like to update the password or change the key, you can do that by changing the password value to your new password, change the `xor_key` if needed and then set the `masked` value to false. This way the app will know to mask the password again after the next run.
   
 #### `script_path`
 You need to set a full path here to the directory, where the scripts should be stored on your disk. On a Mac it would look like in the sample config file, but you can set it similarily on every platform. It is important that it is the full route to your scripts folder. This folder needs to be writable by the user running the app. If there are permission problems, please use the `debug` log level to diagnose. *Attention: The script path needs to end with a trailing slash `/`. This is required by design.*
