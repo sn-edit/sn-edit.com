@@ -172,9 +172,9 @@ The app will search for a config file with the name `servicenow-script-editor.js
 
 If for some reason you do not like the name, you can override the config file's name with the following command. Let's say that we wan't to name our config file `custom_config.json`.
 ```bash
-sn-edit sync --config custom_config.json
+sn-edit sync --config custom_config
 ```
-Right now, the app would search for a file named `custom_config.json` in the aforementioned directories to load the config from.
+Right now, the app would search for a file named `custom_config` in the aforementioned directories to load the config from. You do not need to specify an extension here, it does automatically search for the file.
 
 #### Issues
 For issues please use the issue tracker on github (Follow this link: [Issues](https://github.com/0x111/sn-edit.com/issues)). While describing your issue, please be as precise as you can be on what you did or did not do to encounter the issue. Provide all steps which are needed to reproduce the issue so we can help you in your case. 
