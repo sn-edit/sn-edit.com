@@ -20,7 +20,7 @@ Every new release will be published with a precompiled binary for Linux, Mac OS 
 To check the downloaded binary for validity, you can use the checksums.txt for compare. We do not share these elsewhere except of github and this repository. Due to this, to be sure you don't download something harmful, always use this source.
 
 ## Download the latest version below
-[sn-edit v0.1.1](https://github.com/0x111/sn-edit.com/releases/latest)
+[sn-edit v0.1.2](https://github.com/0x111/sn-edit.com/releases/latest)
 
 # Getting Started
 After you download the executable file, you can feel free to put it anywhere you would like to. The basic requirement is, that your user or whatever user you will run this with has access to the filesystem and the correct permissions to the config file you will create in the next steps and of course to the locations where the scripts will be downloaded.
