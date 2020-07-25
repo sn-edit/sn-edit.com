@@ -1,6 +1,6 @@
 ## Servicenow Script Editor Engine (sn-edit.com)
 
-## Maintainers note
+# Maintainers note
 This repository is now archived, please see [sn-edit](https://github.com/sn-edit/sn-edit) for the new version! 
 This repository will not be maintained anymore!
 
