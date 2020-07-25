@@ -1,5 +1,10 @@
 ## Servicenow Script Editor Engine (sn-edit.com)
 
+## Maintainers note
+This repository is now archived, please see [sn-edit](https://github.com/sn-edit/sn-edit) for the new version! 
+This repository will not be maintained anymore!
+
+
 Did you ever wanted to edit the scripts, ui pages, html etc. locally in your favorite IDE, like Webstorm, Visual Studio Code or others? 
 
 Well, this is your chance to try. This app will allow you to do just that. With minimal footprint, quick reaction time to changes, you will be able to edit everything locally and sync back to the instance right after saving the file.
